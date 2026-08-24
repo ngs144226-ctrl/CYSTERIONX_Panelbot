@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+}
+
+button {
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+}
