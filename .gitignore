@@ -3,3 +3,5 @@ config.py
 *.db
 __pycache__/
 .git/
+
+*.pyc

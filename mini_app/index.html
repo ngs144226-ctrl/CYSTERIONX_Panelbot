@@ -1,20 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CYSTERIONX Mini App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090611">
+    <title>CYSTERIONX • Secure Access</title>
     <link rel="stylesheet" href="style.css">
-
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 
 <body>
 
-<div class="container">
+<div class="app">
 
-    <h1>CYSTERIONX</h1>
-    <p id="user">Loading...</p>
+    <div class="brand">
+        <div class="brand-mark">C</div>
+        <div>
+            <h1>CYSTERIONX</h1>
+            <span>SECURE PANEL ACCESS</span>
+        </div>
+    </div>
 
-    <button onclick="openServices()">Services</button>
+    <main class="access-card">
+
+        <div class="lock-icon">🔐</div>
+
+        <h2>Access Required</h2>
+
+        <p class="subtitle">
+            Enter your personal access key to continue to the panel.
+        </p>
+
+        <div class="input-wrapper">
+            <span class="input-icon">🔑</span>
+            <input
+                id="accessKey"
+                type="text"
+                placeholder="Enter Access Key"
+                autocomplete="off"
+                spellcheck="false"
+            >
+        </div>
+
+        <button id="continueBtn" class="continue-btn" onclick="verifyAccess()">
+            CONTINUE <span>→</span>
+        </button>
+
+        <div id="status" class="status hidden"></div>
+
+        <div class="security-note">
+            <span>🛡️</span>
+            <div>
+                <strong>Secure Access</strong>
+                <small>Your access key is intended for your Telegram account.</small>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        CYSTERIONX • SECURE GATEWAY
+    </footer>
 
 </div>
 
