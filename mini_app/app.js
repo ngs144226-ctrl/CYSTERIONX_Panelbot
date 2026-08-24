@@ -3,7 +3,7 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-const API_URL = "https://record-rise-fifty-marco.trycloudflare.com";
+const API_URL = "https://rely-scheme-wins-hazards.trycloudflare.com";
 
 const keyInput = document.getElementById("accessKey");
 const continueBtn = document.getElementById("continueBtn");
