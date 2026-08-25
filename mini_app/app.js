@@ -57,9 +57,6 @@ async function verifyAccess() {
 
         showStatus("Access verified. Welcome to CYSTERIONX.", "success");
 
-        document.querySelector(".access-card").classList.add("hidden");
-        document.getElementById("dashboard").classList.remove("hidden");
-
         document.getElementById("planName").textContent =
             data.plan_name || "Active";
 
@@ -68,13 +65,19 @@ async function verifyAccess() {
                 ? new Date(data.expires_at).toLocaleString()
                 : "Active";
 
+        // Keep success message visible for 2 seconds,
+        // then smoothly open the authenticated panel.
         setTimeout(() => {
             const status = document.getElementById("status");
+
             if (status) {
                 status.textContent = "";
                 status.className = "status hidden";
             }
-        }, 2500);
+
+            document.querySelector(".access-card").classList.add("hidden");
+            document.getElementById("dashboard").classList.remove("hidden");
+        }, 2000);
 
     } catch (error) {
         console.error(error);
