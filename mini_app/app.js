@@ -11,9 +11,24 @@ const statusBox = document.getElementById("status");
 
 const user = tg.initDataUnsafe?.user;
 
+let statusTimer = null;
+
 function showStatus(message, type) {
+    if (statusTimer) {
+        clearTimeout(statusTimer);
+        statusTimer = null;
+    }
+
     statusBox.textContent = message;
     statusBox.className = "status " + type;
+
+    if (type === "error") {
+        statusTimer = setTimeout(() => {
+            statusBox.textContent = "";
+            statusBox.className = "status hidden";
+            statusTimer = null;
+        }, 2000);
+    }
 }
 
 async function verifyAccess() {
