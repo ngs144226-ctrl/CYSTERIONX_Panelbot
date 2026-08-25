@@ -57,8 +57,24 @@ async function verifyAccess() {
 
         showStatus("Access verified. Welcome to CYSTERIONX.", "success");
 
-        // Panel screen will be connected here next.
-        console.log("Authenticated user:", data.user_id);
+        document.querySelector(".access-card").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+
+        document.getElementById("planName").textContent =
+            data.plan_name || "Active";
+
+        document.getElementById("expiryDate").textContent =
+            data.expires_at
+                ? new Date(data.expires_at).toLocaleString()
+                : "Active";
+
+        setTimeout(() => {
+            const status = document.getElementById("status");
+            if (status) {
+                status.textContent = "";
+                status.className = "status hidden";
+            }
+        }, 2500);
 
     } catch (error) {
         console.error(error);
@@ -76,4 +92,17 @@ keyInput.addEventListener("keydown", function (event) {
 
 if (!user || !tg.initData) {
     showStatus("Please open this panel from Telegram.", "error");
+}
+
+
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+        document.getElementById("dashboard").classList.add("hidden");
+        document.querySelector(".access-card").classList.remove("hidden");
+        keyInput.value = "";
+        showStatus("", "hidden");
+        keyInput.focus();
+    });
 }
