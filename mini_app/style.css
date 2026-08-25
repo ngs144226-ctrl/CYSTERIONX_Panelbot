@@ -701,3 +701,113 @@ footer {
     }
 }
 
+
+/* ===== CYSTERIONX MICRO-ANIMATIONS ===== */
+
+@keyframes cxFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cxSoftFade {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cxGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(155, 92, 255, 0);
+    }
+    50% {
+        box-shadow: 0 0 0 4px rgba(155, 92, 255, 0.08);
+    }
+}
+
+@keyframes cxSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.brand {
+    animation: cxFadeUp 0.55s ease both;
+}
+
+.access-card {
+    animation: cxFadeUp 0.65s ease 0.08s both;
+}
+
+.lock-icon {
+    animation: cxSoftFade 0.55s ease 0.18s both;
+}
+
+.input-wrapper {
+    transition:
+        border-color 0.22s ease,
+        box-shadow 0.22s ease,
+        transform 0.18s ease;
+}
+
+.input-wrapper:focus-within {
+    transform: translateY(-1px);
+    animation: cxGlow 1.8s ease-in-out infinite;
+}
+
+.continue-btn {
+    transition:
+        transform 0.16s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.continue-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgba(121, 54, 218, 0.34);
+}
+
+.continue-btn:active:not(:disabled) {
+    transform: translateY(1px) scale(0.985);
+}
+
+.status {
+    animation: cxSoftFade 0.22s ease both;
+}
+
+.dashboard-card {
+    animation: cxFadeUp 0.5s ease both;
+}
+
+.dashboard-card .dashboard-icon {
+    animation: cxSoftFade 0.45s ease 0.12s both;
+}
+
+.dashboard-card .dashboard-info {
+    animation: cxSoftFade 0.45s ease 0.18s both;
+}
+
+.dashboard-card .dashboard-btn {
+    animation: cxSoftFade 0.45s ease 0.24s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
