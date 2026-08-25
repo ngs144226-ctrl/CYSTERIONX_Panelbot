@@ -24,9 +24,13 @@ function showStatus(message, type) {
 
     if (type === "error") {
         statusTimer = setTimeout(() => {
-            statusBox.textContent = "";
-            statusBox.className = "status hidden";
-            statusTimer = null;
+            statusBox.classList.add("status-out");
+
+            setTimeout(() => {
+                statusBox.textContent = "";
+                statusBox.className = "status hidden";
+                statusTimer = null;
+            }, 280);
         }, 2000);
     }
 }

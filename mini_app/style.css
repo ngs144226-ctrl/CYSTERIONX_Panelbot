@@ -811,3 +811,46 @@ footer {
     }
 }
 
+
+/* ===== CYSTERIONX STATUS FADE-OUT ===== */
+
+@keyframes cxStatusIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes cxStatusOut {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        max-height: 80px;
+        margin-top: 14px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-4px) scale(0.98);
+        max-height: 0;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.status {
+    animation: cxStatusIn 0.22s ease both;
+    overflow: hidden;
+}
+
+.status.status-out {
+    animation: cxStatusOut 0.28s ease forwards;
+    pointer-events: none;
+}
+
