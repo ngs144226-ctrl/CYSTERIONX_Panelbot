@@ -5,6 +5,15 @@ from keyboards.main_menu import main_menu
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
+WEB_APP_URL = "https://cysterionx-panelbot-ltm1.vercel.app"
+
+bot.set_chat_menu_button(
+    menu_button=telebot.types.MenuButtonWebApp(
+        text="🌐 Open Panel",
+        web_app=telebot.types.WebAppInfo(url=WEB_APP_URL)
+    )
+)
+
 master_key_states = set()
 confirm_master_key_states = set()
 
