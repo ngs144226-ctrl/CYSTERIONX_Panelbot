@@ -3,7 +3,7 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-const API_URL = "https://needle-status-ran-garcia.trycloudflare.com";
+const API_URL = "https://duplicate-long-armed-two.trycloudflare.com";
 
 const keyInput = document.getElementById("accessKey");
 const continueBtn = document.getElementById("continueBtn");
