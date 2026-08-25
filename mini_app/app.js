@@ -3,7 +3,7 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-const API_URL = "https://teacher-attacks-dept-its.trycloudflare.com";
+const API_URL = "https://assurance-provincial-abs-oclc.trycloudflare.com";
 
 const keyInput = document.getElementById("accessKey");
 const continueBtn = document.getElementById("continueBtn");
