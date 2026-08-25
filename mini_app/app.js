@@ -3,7 +3,7 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-const API_URL = "https://white-detection-several-skins.trycloudflare.com";
+const API_URL = "https://monthly-lifetime-mba-slides.trycloudflare.com";
 
 const keyInput = document.getElementById("accessKey");
 const continueBtn = document.getElementById("continueBtn");
