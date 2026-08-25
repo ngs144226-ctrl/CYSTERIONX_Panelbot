@@ -854,3 +854,22 @@ footer {
     pointer-events: none;
 }
 
+
+/* ===== CLEAN STATUS EXIT ===== */
+
+.status.status-out {
+    animation: cxCleanStatusOut 0.22s ease forwards !important;
+    pointer-events: none;
+}
+
+@keyframes cxCleanStatusOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+}
+

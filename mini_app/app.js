@@ -85,17 +85,23 @@ async function verifyAccess() {
                 : "Active";
 
         // Keep success message visible for 2 seconds,
-        // then smoothly open the authenticated panel.
+        // then smoothly fade it out before opening the dashboard.
         setTimeout(() => {
             const status = document.getElementById("status");
 
             if (status) {
-                status.textContent = "";
-                status.className = "status hidden";
+                status.classList.add("status-out");
             }
 
-            document.querySelector(".access-card").classList.add("hidden");
-            document.getElementById("dashboard").classList.remove("hidden");
+            setTimeout(() => {
+                if (status) {
+                    status.textContent = "";
+                    status.className = "status hidden";
+                }
+
+                document.querySelector(".access-card").classList.add("hidden");
+                document.getElementById("dashboard").classList.remove("hidden");
+            }, 220);
         }, 2000);
 
     } catch (error) {
