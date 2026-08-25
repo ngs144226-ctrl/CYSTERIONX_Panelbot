@@ -26,9 +26,12 @@ async function verifyAccess() {
     }
 
     if (!tg.initData) {
-        showStatus("Please open this panel from Telegram.", "error");
+        console.log("CYSTERIONX DEBUG: Telegram initData is EMPTY");
+        showStatus("Telegram authentication data missing. Re-open this panel from the Telegram bot.", "error");
         return;
     }
+
+    console.log("CYSTERIONX DEBUG: Telegram initData received, length:", tg.initData.length);
 
     continueBtn.disabled = true;
     showStatus("Verifying secure access...", "loading");
